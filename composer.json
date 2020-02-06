@@ -1,0 +1,22 @@
+{
+    "name": "flogar/core",
+    "description": "Flogar Core",
+    "keywords": ["flogar"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jucafloga",
+            "email": "jucafloga@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/jucafloga/flogar-core",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flogar\\": "src/Core/"
+        }
+    }
+}
