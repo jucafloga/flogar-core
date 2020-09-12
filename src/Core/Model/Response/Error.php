@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Response;
 
@@ -23,10 +20,8 @@ class Error
 
     /**
      * Error constructor.
-     * @param string $code
-     * @param string $message
      */
-    public function __construct($code = '', $message = '')
+    public function __construct(?string $code = '', ?string $message = '')
     {
         $this->code = $code;
         $this->message = $message;
@@ -35,7 +30,7 @@ class Error
     /**
      * @return string
      */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
@@ -43,9 +38,9 @@ class Error
     /**
      * @param string $code
      *
-     * @return Error
+     * @return $this
      */
-    public function setCode($code)
+    public function setCode(?string $code): self
     {
         $this->code = $code;
 
@@ -55,7 +50,7 @@ class Error
     /**
      * @return string
      */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->message;
     }
@@ -63,9 +58,9 @@ class Error
     /**
      * @param string $message
      *
-     * @return Error
+     * @return $this
      */
-    public function setMessage($message)
+    public function setMessage(?string $message): self
     {
         $this->message = $message;
 

@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Response;
 
@@ -24,7 +21,7 @@ class BillResult extends BaseResult
     /**
      * @return string
      */
-    public function getCdrZip()
+    public function getCdrZip(): ?string
     {
         return $this->cdrZip;
     }
@@ -34,7 +31,7 @@ class BillResult extends BaseResult
      *
      * @return $this
      */
-    public function setCdrZip($cdrZip)
+    public function setCdrZip(?string $cdrZip): self
     {
         $this->cdrZip = $cdrZip;
 
@@ -44,7 +41,7 @@ class BillResult extends BaseResult
     /**
      * @return CdrResponse
      */
-    public function getCdrResponse()
+    public function getCdrResponse(): ?CdrResponse
     {
         return $this->cdrResponse;
     }
@@ -54,7 +51,7 @@ class BillResult extends BaseResult
      *
      * @return $this
      */
-    public function setCdrResponse($cdrResponse)
+    public function setCdrResponse(?CdrResponse $cdrResponse): self
     {
         $this->cdrResponse = $cdrResponse;
 

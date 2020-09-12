@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Factory;
 
@@ -19,5 +16,5 @@ interface FactoryInterface
      *
      * @return BaseResult
      */
-    public function send(DocumentInterface $document);
+    public function send(DocumentInterface $document): ?BaseResult;
 }

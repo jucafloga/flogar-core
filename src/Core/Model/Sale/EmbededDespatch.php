@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
@@ -65,7 +66,7 @@ class EmbededDespatch
     /**
      * @return Direction
      */
-    public function getLlegada()
+    public function getLlegada(): ?Direction
     {
         return $this->llegada;
     }
@@ -75,7 +76,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setLlegada($llegada)
+    public function setLlegada(?Direction $llegada): EmbededDespatch
     {
         $this->llegada = $llegada;
 
@@ -85,7 +86,7 @@ class EmbededDespatch
     /**
      * @return Direction
      */
-    public function getPartida()
+    public function getPartida(): ?Direction
     {
         return $this->partida;
     }
@@ -95,7 +96,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setPartida($partida)
+    public function setPartida(?Direction $partida): EmbededDespatch
     {
         $this->partida = $partida;
 
@@ -105,7 +106,7 @@ class EmbededDespatch
     /**
      * @return Client
      */
-    public function getTransportista()
+    public function getTransportista(): ?Client
     {
         return $this->transportista;
     }
@@ -115,7 +116,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setTransportista($transportista)
+    public function setTransportista(?Client $transportista): EmbededDespatch
     {
         $this->transportista = $transportista;
 
@@ -125,7 +126,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getNroLicencia()
+    public function getNroLicencia(): ?string
     {
         return $this->nroLicencia;
     }
@@ -135,7 +136,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setNroLicencia($nroLicencia)
+    public function setNroLicencia(?string $nroLicencia): EmbededDespatch
     {
         $this->nroLicencia = $nroLicencia;
 
@@ -145,7 +146,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getTranspPlaca()
+    public function getTranspPlaca(): ?string
     {
         return $this->transpPlaca;
     }
@@ -155,7 +156,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setTranspPlaca($transpPlaca)
+    public function setTranspPlaca(?string $transpPlaca): EmbededDespatch
     {
         $this->transpPlaca = $transpPlaca;
 
@@ -165,7 +166,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getTranspCodeAuth()
+    public function getTranspCodeAuth(): ?string
     {
         return $this->transpCodeAuth;
     }
@@ -175,7 +176,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setTranspCodeAuth($transpCodeAuth)
+    public function setTranspCodeAuth(?string $transpCodeAuth): EmbededDespatch
     {
         $this->transpCodeAuth = $transpCodeAuth;
 
@@ -185,7 +186,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getTranspMarca()
+    public function getTranspMarca(): ?string
     {
         return $this->transpMarca;
     }
@@ -195,7 +196,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setTranspMarca($transpMarca)
+    public function setTranspMarca(?string $transpMarca): EmbededDespatch
     {
         $this->transpMarca = $transpMarca;
 
@@ -205,7 +206,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getModTraslado()
+    public function getModTraslado(): ?string
     {
         return $this->modTraslado;
     }
@@ -215,7 +216,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setModTraslado($modTraslado)
+    public function setModTraslado(?string $modTraslado): EmbededDespatch
     {
         $this->modTraslado = $modTraslado;
 
@@ -225,7 +226,7 @@ class EmbededDespatch
     /**
      * @return float
      */
-    public function getPesoBruto()
+    public function getPesoBruto(): ?float
     {
         return $this->pesoBruto;
     }
@@ -235,7 +236,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setPesoBruto($pesoBruto)
+    public function setPesoBruto(?float $pesoBruto): EmbededDespatch
     {
         $this->pesoBruto = $pesoBruto;
 
@@ -245,7 +246,7 @@ class EmbededDespatch
     /**
      * @return string
      */
-    public function getUndPesoBruto()
+    public function getUndPesoBruto(): ?string
     {
         return $this->undPesoBruto;
     }
@@ -255,7 +256,7 @@ class EmbededDespatch
      *
      * @return EmbededDespatch
      */
-    public function setUndPesoBruto($undPesoBruto)
+    public function setUndPesoBruto(?string $undPesoBruto): EmbededDespatch
     {
         $this->undPesoBruto = $undPesoBruto;
 

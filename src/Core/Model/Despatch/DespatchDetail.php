@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Despatch;
 
@@ -37,7 +34,7 @@ class DespatchDetail
     /**
      * @return string
      */
-    public function getCodigo()
+    public function getCodigo(): ?string
     {
         return $this->codigo;
     }
@@ -47,7 +44,7 @@ class DespatchDetail
      *
      * @return DespatchDetail
      */
-    public function setCodigo($codigo)
+    public function setCodigo(?string $codigo): DespatchDetail
     {
         $this->codigo = $codigo;
 
@@ -57,7 +54,7 @@ class DespatchDetail
     /**
      * @return string
      */
-    public function getDescripcion()
+    public function getDescripcion(): ?string
     {
         return $this->descripcion;
     }
@@ -67,7 +64,7 @@ class DespatchDetail
      *
      * @return DespatchDetail
      */
-    public function setDescripcion($descripcion)
+    public function setDescripcion(?string $descripcion): DespatchDetail
     {
         $this->descripcion = $descripcion;
 
@@ -77,7 +74,7 @@ class DespatchDetail
     /**
      * @return string
      */
-    public function getUnidad()
+    public function getUnidad(): ?string
     {
         return $this->unidad;
     }
@@ -87,7 +84,7 @@ class DespatchDetail
      *
      * @return DespatchDetail
      */
-    public function setUnidad($unidad)
+    public function setUnidad(?string $unidad): DespatchDetail
     {
         $this->unidad = $unidad;
 
@@ -97,7 +94,7 @@ class DespatchDetail
     /**
      * @return float
      */
-    public function getCantidad()
+    public function getCantidad(): ?float
     {
         return $this->cantidad;
     }
@@ -107,7 +104,7 @@ class DespatchDetail
      *
      * @return DespatchDetail
      */
-    public function setCantidad($cantidad)
+    public function setCantidad(?float $cantidad): DespatchDetail
     {
         $this->cantidad = $cantidad;
 
@@ -117,7 +114,7 @@ class DespatchDetail
     /**
      * @return string
      */
-    public function getCodProdSunat()
+    public function getCodProdSunat(): ?string
     {
         return $this->codProdSunat;
     }
@@ -127,7 +124,7 @@ class DespatchDetail
      *
      * @return DespatchDetail
      */
-    public function setCodProdSunat($codProdSunat)
+    public function setCodProdSunat(?string $codProdSunat): DespatchDetail
     {
         $this->codProdSunat = $codProdSunat;
 

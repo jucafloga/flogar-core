@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Validator;
 
@@ -16,7 +13,7 @@ interface DocumentValidatorInterface
     /**
      * @param DocumentInterface $document
      *
-     * @return mixed
+     * @return object
      */
-    public function validate(DocumentInterface $document);
+    public function validate(DocumentInterface $document): ?object;
 }

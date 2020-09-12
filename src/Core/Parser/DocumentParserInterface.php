@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Parser;
 
@@ -14,5 +15,5 @@ interface DocumentParserInterface
      *
      * @return DocumentInterface
      */
-    public function parse($value);
+    public function parse($value): ?DocumentInterface;
 }

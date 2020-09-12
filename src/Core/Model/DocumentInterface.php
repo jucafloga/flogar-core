@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model;
 
@@ -12,5 +13,5 @@ interface DocumentInterface
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 }

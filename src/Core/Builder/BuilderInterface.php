@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Builder;
 
@@ -20,5 +17,5 @@ interface BuilderInterface
      *
      * @return string Content File
      */
-    public function build(DocumentInterface $document);
+    public function build(DocumentInterface $document): ?string;
 }

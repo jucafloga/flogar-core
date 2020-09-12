@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Response;
 
@@ -32,7 +29,7 @@ class BaseResult
     /**
      * @return bool
      */
-    public function isSuccess()
+    public function isSuccess(): ?bool
     {
         return $this->success;
     }
@@ -42,7 +39,7 @@ class BaseResult
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setSuccess(?bool $success): self
     {
         $this->success = $success;
 
@@ -52,7 +49,7 @@ class BaseResult
     /**
      * @return Error
      */
-    public function getError()
+    public function getError(): ?Error
     {
         return $this->error;
     }
@@ -62,7 +59,7 @@ class BaseResult
      *
      * @return $this
      */
-    public function setError($error)
+    public function setError(?Error $error): self
     {
         $this->error = $error;
 

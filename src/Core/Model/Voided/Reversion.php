@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Voided;
 
@@ -12,7 +13,7 @@ class Reversion extends Voided
      *
      * @return string
      */
-    public function getXmlId()
+    public function getXmlId(): string
     {
         $parts = [
             'RR',

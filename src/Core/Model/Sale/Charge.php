@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
@@ -27,72 +28,80 @@ class Charge
     /**
      * @return string
      */
-    public function getCodTipo()
+    public function getCodTipo(): ?string
     {
         return $this->codTipo;
     }
 
     /**
      * @param string $codTipo
+     *
      * @return Charge
      */
-    public function setCodTipo($codTipo)
+    public function setCodTipo(?string $codTipo): Charge
     {
         $this->codTipo = $codTipo;
+
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getFactor()
+    public function getFactor(): ?float
     {
         return $this->factor;
     }
 
     /**
      * @param float $factor
+     *
      * @return Charge
      */
-    public function setFactor($factor)
+    public function setFactor(?float $factor): Charge
     {
         $this->factor = $factor;
+
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getMonto()
+    public function getMonto(): ?float
     {
         return $this->monto;
     }
 
     /**
      * @param float $monto
+     *
      * @return Charge
      */
-    public function setMonto($monto)
+    public function setMonto(?float $monto): Charge
     {
         $this->monto = $monto;
+
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getMontoBase()
+    public function getMontoBase(): ?float
     {
         return $this->montoBase;
     }
 
     /**
      * @param float $montoBase
+     *
      * @return Charge
      */
-    public function setMontoBase($montoBase)
+    public function setMontoBase(?float $montoBase): Charge
     {
         $this->montoBase = $montoBase;
+
         return $this;
     }
 }

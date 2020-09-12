@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Summary;
 
@@ -48,7 +49,7 @@ class Summary implements DocumentInterface
     /**
      * @return string
      */
-    public function getCorrelativo()
+    public function getCorrelativo(): ?string
     {
         return $this->correlativo;
     }
@@ -58,7 +59,7 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setCorrelativo($correlativo)
+    public function setCorrelativo(?string $correlativo): Summary
     {
         $this->correlativo = $correlativo;
 
@@ -68,7 +69,7 @@ class Summary implements DocumentInterface
     /**
      * @return DateTimeInterface
      */
-    public function getFecGeneracion()
+    public function getFecGeneracion(): ?DateTimeInterface
     {
         return $this->fecGeneracion;
     }
@@ -78,7 +79,7 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setFecGeneracion(DateTimeInterface $fecGeneracion)
+    public function setFecGeneracion(?DateTimeInterface $fecGeneracion): Summary
     {
         $this->fecGeneracion = $fecGeneracion;
 
@@ -88,7 +89,7 @@ class Summary implements DocumentInterface
     /**
      * @return DateTimeInterface
      */
-    public function getFecResumen()
+    public function getFecResumen(): ?DateTimeInterface
     {
         return $this->fecResumen;
     }
@@ -98,7 +99,7 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setFecResumen(DateTimeInterface $fecResumen)
+    public function setFecResumen(?DateTimeInterface $fecResumen): Summary
     {
         $this->fecResumen = $fecResumen;
 
@@ -108,7 +109,7 @@ class Summary implements DocumentInterface
     /**
      * @return string
      */
-    public function getMoneda()
+    public function getMoneda(): ?string
     {
         return $this->moneda;
     }
@@ -118,16 +119,17 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setMoneda($moneda)
+    public function setMoneda(?string $moneda): Summary
     {
         $this->moneda = $moneda;
+
         return $this;
     }
 
     /**
      * @return Company
      */
-    public function getCompany()
+    public function getCompany(): ?Company
     {
         return $this->company;
     }
@@ -137,7 +139,7 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setCompany(Company $company)
+    public function setCompany(?Company $company): Summary
     {
         $this->company = $company;
 
@@ -147,7 +149,7 @@ class Summary implements DocumentInterface
     /**
      * @return SummaryDetail[]
      */
-    public function getDetails()
+    public function getDetails(): ?array
     {
         return $this->details;
     }
@@ -157,7 +159,7 @@ class Summary implements DocumentInterface
      *
      * @return Summary
      */
-    public function setDetails($details)
+    public function setDetails(?array $details): Summary
     {
         $this->details = $details;
 
@@ -169,7 +171,7 @@ class Summary implements DocumentInterface
      *
      * @return string
      */
-    public function getXmlId()
+    public function getXmlId(): string
     {
         $parts = [
             'RC',
@@ -185,7 +187,7 @@ class Summary implements DocumentInterface
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->company->getRuc().'-'.$this->getXmlId();
     }

@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Administrador
- */
+declare(strict_types=1);
 
 namespace Flogar\Services;
 
@@ -21,5 +18,5 @@ interface SenderInterface
      *
      * @return BaseResult
      */
-    public function send($filename, $content);
+    public function send(?string $filename, ?string $content): ?BaseResult;
 }

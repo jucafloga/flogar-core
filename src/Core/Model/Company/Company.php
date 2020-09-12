@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Company;
 
@@ -44,7 +41,7 @@ class Company
     /**
      * @return string
      */
-    public function getRuc()
+    public function getRuc(): ?string
     {
         return $this->ruc;
     }
@@ -54,7 +51,7 @@ class Company
      *
      * @return Company
      */
-    public function setRuc($ruc)
+    public function setRuc(?string $ruc): Company
     {
         $this->ruc = $ruc;
 
@@ -64,7 +61,7 @@ class Company
     /**
      * @return string
      */
-    public function getRazonSocial()
+    public function getRazonSocial(): ?string
     {
         return $this->razonSocial;
     }
@@ -74,7 +71,7 @@ class Company
      *
      * @return Company
      */
-    public function setRazonSocial($razonSocial)
+    public function setRazonSocial(?string $razonSocial): Company
     {
         $this->razonSocial = $razonSocial;
 
@@ -84,7 +81,7 @@ class Company
     /**
      * @return string
      */
-    public function getNombreComercial()
+    public function getNombreComercial(): ?string
     {
         return $this->nombreComercial;
     }
@@ -94,7 +91,7 @@ class Company
      *
      * @return Company
      */
-    public function setNombreComercial($nombreComercial)
+    public function setNombreComercial(?string $nombreComercial): Company
     {
         $this->nombreComercial = $nombreComercial;
 
@@ -104,7 +101,7 @@ class Company
     /**
      * @return Address
      */
-    public function getAddress()
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
@@ -114,7 +111,7 @@ class Company
      *
      * @return Company
      */
-    public function setAddress($address)
+    public function setAddress(?Address $address): Company
     {
         $this->address = $address;
 
@@ -124,36 +121,40 @@ class Company
     /**
      * @return string
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
     /**
      * @param string $email
+     *
      * @return Company
      */
-    public function setEmail($email)
+    public function setEmail(?string $email): Company
     {
         $this->email = $email;
+
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getTelephone()
+    public function getTelephone(): ?string
     {
         return $this->telephone;
     }
 
     /**
      * @param string $telephone
+     *
      * @return Company
      */
-    public function setTelephone($telephone)
+    public function setTelephone(?string $telephone): Company
     {
         $this->telephone = $telephone;
+
         return $this;
     }
 }

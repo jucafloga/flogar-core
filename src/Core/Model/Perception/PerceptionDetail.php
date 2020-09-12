@@ -1,11 +1,9 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Administrador
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Perception;
 
+use DateTimeInterface;
 use Flogar\Model\Retention\Exchange;
 use Flogar\Model\Retention\Payment;
 
@@ -31,7 +29,7 @@ class PerceptionDetail
     /**
      * Fecha de Emision del documento relacionado.
      *
-     * @var \DateTime
+     * @var DateTimeInterface
      */
     private $fechaEmision;
 
@@ -59,7 +57,7 @@ class PerceptionDetail
     /**
      * Fecha de Retención.
      *
-     * @var \DateTime
+     * @var DateTimeInterface
      */
     private $fechaPercepcion;
 
@@ -85,7 +83,7 @@ class PerceptionDetail
     /**
      * @return string
      */
-    public function getTipoDoc()
+    public function getTipoDoc(): ?string
     {
         return $this->tipoDoc;
     }
@@ -95,7 +93,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setTipoDoc($tipoDoc)
+    public function setTipoDoc(?string $tipoDoc): PerceptionDetail
     {
         $this->tipoDoc = $tipoDoc;
 
@@ -105,7 +103,7 @@ class PerceptionDetail
     /**
      * @return string
      */
-    public function getNumDoc()
+    public function getNumDoc(): ?string
     {
         return $this->numDoc;
     }
@@ -115,7 +113,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setNumDoc($numDoc)
+    public function setNumDoc(?string $numDoc): PerceptionDetail
     {
         $this->numDoc = $numDoc;
 
@@ -123,19 +121,19 @@ class PerceptionDetail
     }
 
     /**
-     * @return \DateTime
+     * @return DateTimeInterface
      */
-    public function getFechaEmision()
+    public function getFechaEmision(): ?DateTimeInterface
     {
         return $this->fechaEmision;
     }
 
     /**
-     * @param \DateTime $fechaEmision
+     * @param DateTimeInterface $fechaEmision
      *
      * @return PerceptionDetail
      */
-    public function setFechaEmision($fechaEmision)
+    public function setFechaEmision(?DateTimeInterface $fechaEmision): PerceptionDetail
     {
         $this->fechaEmision = $fechaEmision;
 
@@ -145,7 +143,7 @@ class PerceptionDetail
     /**
      * @return float
      */
-    public function getImpTotal()
+    public function getImpTotal(): ?float
     {
         return $this->impTotal;
     }
@@ -155,7 +153,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setImpTotal($impTotal)
+    public function setImpTotal(?float $impTotal): PerceptionDetail
     {
         $this->impTotal = $impTotal;
 
@@ -165,7 +163,7 @@ class PerceptionDetail
     /**
      * @return string
      */
-    public function getMoneda()
+    public function getMoneda(): ?string
     {
         return $this->moneda;
     }
@@ -175,7 +173,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setMoneda($moneda)
+    public function setMoneda(?string $moneda): PerceptionDetail
     {
         $this->moneda = $moneda;
 
@@ -185,7 +183,7 @@ class PerceptionDetail
     /**
      * @return Payment[]
      */
-    public function getCobros()
+    public function getCobros(): ?array
     {
         return $this->cobros;
     }
@@ -195,7 +193,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setCobros($cobros)
+    public function setCobros(?array $cobros): PerceptionDetail
     {
         $this->cobros = $cobros;
 
@@ -203,19 +201,19 @@ class PerceptionDetail
     }
 
     /**
-     * @return \DateTime
+     * @return DateTimeInterface
      */
-    public function getFechaPercepcion()
+    public function getFechaPercepcion(): ?DateTimeInterface
     {
         return $this->fechaPercepcion;
     }
 
     /**
-     * @param \DateTime $fechaPercepcion
+     * @param DateTimeInterface $fechaPercepcion
      *
      * @return PerceptionDetail
      */
-    public function setFechaPercepcion($fechaPercepcion)
+    public function setFechaPercepcion(?DateTimeInterface $fechaPercepcion): PerceptionDetail
     {
         $this->fechaPercepcion = $fechaPercepcion;
 
@@ -225,7 +223,7 @@ class PerceptionDetail
     /**
      * @return float
      */
-    public function getImpPercibido()
+    public function getImpPercibido(): ?float
     {
         return $this->impPercibido;
     }
@@ -235,7 +233,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setImpPercibido($impPercibido)
+    public function setImpPercibido(?float $impPercibido): PerceptionDetail
     {
         $this->impPercibido = $impPercibido;
 
@@ -245,7 +243,7 @@ class PerceptionDetail
     /**
      * @return float
      */
-    public function getImpCobrar()
+    public function getImpCobrar(): ?float
     {
         return $this->impCobrar;
     }
@@ -255,7 +253,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setImpCobrar($impCobrar)
+    public function setImpCobrar(?float $impCobrar): PerceptionDetail
     {
         $this->impCobrar = $impCobrar;
 
@@ -265,7 +263,7 @@ class PerceptionDetail
     /**
      * @return Exchange
      */
-    public function getTipoCambio()
+    public function getTipoCambio(): ?Exchange
     {
         return $this->tipoCambio;
     }
@@ -275,7 +273,7 @@ class PerceptionDetail
      *
      * @return PerceptionDetail
      */
-    public function setTipoCambio($tipoCambio)
+    public function setTipoCambio(?Exchange $tipoCambio): PerceptionDetail
     {
         $this->tipoCambio = $tipoCambio;
 

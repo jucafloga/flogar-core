@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
@@ -20,7 +21,7 @@ class Document
     /**
      * @return string
      */
-    public function getTipoDoc()
+    public function getTipoDoc(): ?string
     {
         return $this->tipoDoc;
     }
@@ -30,7 +31,7 @@ class Document
      *
      * @return Document
      */
-    public function setTipoDoc($tipoDoc)
+    public function setTipoDoc(?string $tipoDoc): Document
     {
         $this->tipoDoc = $tipoDoc;
 
@@ -40,7 +41,7 @@ class Document
     /**
      * @return string
      */
-    public function getNroDoc()
+    public function getNroDoc(): ?string
     {
         return $this->nroDoc;
     }
@@ -50,7 +51,7 @@ class Document
      *
      * @return Document
      */
-    public function setNroDoc($nroDoc)
+    public function setNroDoc(?string $nroDoc): Document
     {
         $this->nroDoc = $nroDoc;
 

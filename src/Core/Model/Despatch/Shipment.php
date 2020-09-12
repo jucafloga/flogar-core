@@ -1,10 +1,9 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Despatch;
+
+use DateTime;
 
 /**
  * Class Shipment.
@@ -50,7 +49,7 @@ class Shipment
     /**
      * Fecha de inicio del traslado.
      *
-     * @var \DateTime
+     * @var DateTime
      */
     private $fecTraslado;
     /**
@@ -81,7 +80,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getCodTraslado()
+    public function getCodTraslado(): ?string
     {
         return $this->codTraslado;
     }
@@ -91,7 +90,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setCodTraslado($codTraslado)
+    public function setCodTraslado(?string $codTraslado): Shipment
     {
         $this->codTraslado = $codTraslado;
 
@@ -101,7 +100,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getDesTraslado()
+    public function getDesTraslado(): ?string
     {
         return $this->desTraslado;
     }
@@ -111,7 +110,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setDesTraslado($desTraslado)
+    public function setDesTraslado(?string $desTraslado): Shipment
     {
         $this->desTraslado = $desTraslado;
 
@@ -121,7 +120,7 @@ class Shipment
     /**
      * @return bool
      */
-    public function isIndTransbordo()
+    public function isIndTransbordo(): ?bool
     {
         return $this->indTransbordo;
     }
@@ -131,7 +130,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setIndTransbordo($indTransbordo)
+    public function setIndTransbordo(?bool $indTransbordo): Shipment
     {
         $this->indTransbordo = $indTransbordo;
 
@@ -141,7 +140,7 @@ class Shipment
     /**
      * @return float
      */
-    public function getPesoTotal()
+    public function getPesoTotal(): ?float
     {
         return $this->pesoTotal;
     }
@@ -151,7 +150,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setPesoTotal($pesoTotal)
+    public function setPesoTotal(?float $pesoTotal): Shipment
     {
         $this->pesoTotal = $pesoTotal;
 
@@ -161,7 +160,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getUndPesoTotal()
+    public function getUndPesoTotal(): ?string
     {
         return $this->undPesoTotal;
     }
@@ -171,7 +170,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setUndPesoTotal($undPesoTotal)
+    public function setUndPesoTotal(?string $undPesoTotal): Shipment
     {
         $this->undPesoTotal = $undPesoTotal;
 
@@ -181,7 +180,7 @@ class Shipment
     /**
      * @return int
      */
-    public function getNumBultos()
+    public function getNumBultos(): ?int
     {
         return $this->numBultos;
     }
@@ -191,7 +190,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setNumBultos($numBultos)
+    public function setNumBultos(?int $numBultos): Shipment
     {
         $this->numBultos = $numBultos;
 
@@ -201,7 +200,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getModTraslado()
+    public function getModTraslado(): ?string
     {
         return $this->modTraslado;
     }
@@ -211,7 +210,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setModTraslado($modTraslado)
+    public function setModTraslado(?string $modTraslado): Shipment
     {
         $this->modTraslado = $modTraslado;
 
@@ -219,19 +218,19 @@ class Shipment
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getFecTraslado()
+    public function getFecTraslado(): ?DateTime
     {
         return $this->fecTraslado;
     }
 
     /**
-     * @param \DateTime $fecTraslado
+     * @param DateTime $fecTraslado
      *
      * @return Shipment
      */
-    public function setFecTraslado($fecTraslado)
+    public function setFecTraslado(?DateTime $fecTraslado): Shipment
     {
         $this->fecTraslado = $fecTraslado;
 
@@ -241,7 +240,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getNumContenedor()
+    public function getNumContenedor(): ?string
     {
         return $this->numContenedor;
     }
@@ -251,7 +250,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setNumContenedor($numContenedor)
+    public function setNumContenedor(?string $numContenedor): Shipment
     {
         $this->numContenedor = $numContenedor;
 
@@ -261,7 +260,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getCodPuerto()
+    public function getCodPuerto(): ?string
     {
         return $this->codPuerto;
     }
@@ -271,7 +270,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setCodPuerto($codPuerto)
+    public function setCodPuerto(?string $codPuerto): Shipment
     {
         $this->codPuerto = $codPuerto;
 
@@ -281,7 +280,7 @@ class Shipment
     /**
      * @return Transportist
      */
-    public function getTransportista()
+    public function getTransportista(): ?Transportist
     {
         return $this->transportista;
     }
@@ -291,7 +290,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setTransportista($transportista)
+    public function setTransportista(?Transportist $transportista): Shipment
     {
         $this->transportista = $transportista;
 
@@ -301,7 +300,7 @@ class Shipment
     /**
      * @return Direction
      */
-    public function getLlegada()
+    public function getLlegada(): ?Direction
     {
         return $this->llegada;
     }
@@ -311,7 +310,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setLlegada($llegada)
+    public function setLlegada(?Direction $llegada): Shipment
     {
         $this->llegada = $llegada;
 
@@ -321,7 +320,7 @@ class Shipment
     /**
      * @return Direction
      */
-    public function getPartida()
+    public function getPartida(): ?Direction
     {
         return $this->partida;
     }
@@ -331,7 +330,7 @@ class Shipment
      *
      * @return Shipment
      */
-    public function setPartida($partida)
+    public function setPartida(?Direction $partida): Shipment
     {
         $this->partida = $partida;
 

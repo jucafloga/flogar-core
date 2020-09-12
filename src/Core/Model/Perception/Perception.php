@@ -1,11 +1,9 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Administrador
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Perception;
 
+use DateTimeInterface;
 use Flogar\Model\Client\Client;
 use Flogar\Model\Company\Company;
 use Flogar\Model\DocumentInterface;
@@ -28,7 +26,7 @@ class Perception implements DocumentInterface
     private $correlativo;
 
     /**
-     * @var \DateTimeInterface
+     * @var DateTimeInterface
      */
     private $fechaEmision;
 
@@ -81,7 +79,7 @@ class Perception implements DocumentInterface
     /**
      * @return string
      */
-    public function getSerie()
+    public function getSerie(): ?string
     {
         return $this->serie;
     }
@@ -91,7 +89,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setSerie($serie)
+    public function setSerie(?string $serie): Perception
     {
         $this->serie = $serie;
 
@@ -101,7 +99,7 @@ class Perception implements DocumentInterface
     /**
      * @return string
      */
-    public function getCorrelativo()
+    public function getCorrelativo(): ?string
     {
         return $this->correlativo;
     }
@@ -111,7 +109,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setCorrelativo($correlativo)
+    public function setCorrelativo(?string $correlativo): Perception
     {
         $this->correlativo = $correlativo;
 
@@ -119,19 +117,19 @@ class Perception implements DocumentInterface
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return DateTimeInterface
      */
-    public function getFechaEmision()
+    public function getFechaEmision(): ?DateTimeInterface
     {
         return $this->fechaEmision;
     }
 
     /**
-     * @param \DateTimeInterface $fechaEmision
+     * @param DateTimeInterface $fechaEmision
      *
      * @return Perception
      */
-    public function setFechaEmision(\DateTimeInterface $fechaEmision)
+    public function setFechaEmision(?DateTimeInterface $fechaEmision): Perception
     {
         $this->fechaEmision = $fechaEmision;
 
@@ -141,7 +139,7 @@ class Perception implements DocumentInterface
     /**
      * @return Company
      */
-    public function getCompany()
+    public function getCompany(): ?Company
     {
         return $this->company;
     }
@@ -151,7 +149,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setCompany(Company $company)
+    public function setCompany(?Company $company): Perception
     {
         $this->company = $company;
 
@@ -161,7 +159,7 @@ class Perception implements DocumentInterface
     /**
      * @return Client
      */
-    public function getProveedor()
+    public function getProveedor(): ?Client
     {
         return $this->proveedor;
     }
@@ -171,7 +169,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setProveedor($proveedor)
+    public function setProveedor(?Client $proveedor): Perception
     {
         $this->proveedor = $proveedor;
 
@@ -181,7 +179,7 @@ class Perception implements DocumentInterface
     /**
      * @return string
      */
-    public function getRegimen()
+    public function getRegimen(): ?string
     {
         return $this->regimen;
     }
@@ -191,7 +189,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setRegimen($regimen)
+    public function setRegimen(?string $regimen): Perception
     {
         $this->regimen = $regimen;
 
@@ -201,7 +199,7 @@ class Perception implements DocumentInterface
     /**
      * @return float
      */
-    public function getTasa()
+    public function getTasa(): ?float
     {
         return $this->tasa;
     }
@@ -211,7 +209,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setTasa($tasa)
+    public function setTasa(?float $tasa): Perception
     {
         $this->tasa = $tasa;
 
@@ -221,7 +219,7 @@ class Perception implements DocumentInterface
     /**
      * @return float
      */
-    public function getImpPercibido()
+    public function getImpPercibido(): ?float
     {
         return $this->impPercibido;
     }
@@ -231,7 +229,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setImpPercibido($impPercibido)
+    public function setImpPercibido(?float $impPercibido): Perception
     {
         $this->impPercibido = $impPercibido;
 
@@ -241,7 +239,7 @@ class Perception implements DocumentInterface
     /**
      * @return float
      */
-    public function getImpCobrado()
+    public function getImpCobrado(): ?float
     {
         return $this->impCobrado;
     }
@@ -251,7 +249,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setImpCobrado($impCobrado)
+    public function setImpCobrado(?float $impCobrado): Perception
     {
         $this->impCobrado = $impCobrado;
 
@@ -261,7 +259,7 @@ class Perception implements DocumentInterface
     /**
      * @return string
      */
-    public function getObservacion()
+    public function getObservacion(): ?string
     {
         return $this->observacion;
     }
@@ -271,7 +269,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setObservacion($observacion)
+    public function setObservacion(?string $observacion): Perception
     {
         $this->observacion = $observacion;
 
@@ -281,7 +279,7 @@ class Perception implements DocumentInterface
     /**
      * @return PerceptionDetail[]
      */
-    public function getDetails()
+    public function getDetails(): ?array
     {
         return $this->details;
     }
@@ -291,7 +289,7 @@ class Perception implements DocumentInterface
      *
      * @return Perception
      */
-    public function setDetails($details)
+    public function setDetails(?array $details): Perception
     {
         $this->details = $details;
 
@@ -303,7 +301,7 @@ class Perception implements DocumentInterface
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         $parts = [
             $this->company->getRuc(),

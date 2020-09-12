@@ -1,11 +1,9 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Despatch;
 
+use DateTimeInterface;
 use Flogar\Model\Client\Client;
 use Flogar\Model\Company\Company;
 use Flogar\Model\DocumentInterface;
@@ -23,7 +21,6 @@ class Despatch implements DocumentInterface
     /**
      * Serie del Documento (ejem: T001).
      *
-     *
      * @var string
      */
     private $serie;
@@ -36,7 +33,7 @@ class Despatch implements DocumentInterface
      */
     private $observacion;
     /**
-     * @var \DateTimeInterface
+     * @var DateTimeInterface
      */
     private $fechaEmision;
     /**
@@ -49,7 +46,6 @@ class Despatch implements DocumentInterface
     private $destinatario;
     /**
      * Datos del Proveedor. (cuando se ingrese).
-     *
      *
      * @var Client
      */
@@ -74,7 +70,7 @@ class Despatch implements DocumentInterface
     /**
      * @return string
      */
-    public function getTipoDoc()
+    public function getTipoDoc(): ?string
     {
         return $this->tipoDoc;
     }
@@ -84,7 +80,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setTipoDoc($tipoDoc)
+    public function setTipoDoc(?string $tipoDoc): Despatch
     {
         $this->tipoDoc = $tipoDoc;
 
@@ -94,7 +90,7 @@ class Despatch implements DocumentInterface
     /**
      * @return string
      */
-    public function getSerie()
+    public function getSerie(): ?string
     {
         return $this->serie;
     }
@@ -104,7 +100,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setSerie($serie)
+    public function setSerie(?string $serie): Despatch
     {
         $this->serie = $serie;
 
@@ -114,7 +110,7 @@ class Despatch implements DocumentInterface
     /**
      * @return string
      */
-    public function getCorrelativo()
+    public function getCorrelativo(): ?string
     {
         return $this->correlativo;
     }
@@ -124,7 +120,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setCorrelativo($correlativo)
+    public function setCorrelativo(?string $correlativo): Despatch
     {
         $this->correlativo = $correlativo;
 
@@ -134,7 +130,7 @@ class Despatch implements DocumentInterface
     /**
      * @return string
      */
-    public function getObservacion()
+    public function getObservacion(): ?string
     {
         return $this->observacion;
     }
@@ -144,7 +140,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setObservacion($observacion)
+    public function setObservacion(?string $observacion): Despatch
     {
         $this->observacion = $observacion;
 
@@ -152,19 +148,19 @@ class Despatch implements DocumentInterface
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return DateTimeInterface
      */
-    public function getFechaEmision()
+    public function getFechaEmision(): ?DateTimeInterface
     {
         return $this->fechaEmision;
     }
 
     /**
-     * @param \DateTimeInterface $fechaEmision
+     * @param DateTimeInterface $fechaEmision
      *
      * @return Despatch
      */
-    public function setFechaEmision(\DateTimeInterface $fechaEmision)
+    public function setFechaEmision(?DateTimeInterface $fechaEmision): Despatch
     {
         $this->fechaEmision = $fechaEmision;
 
@@ -174,7 +170,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Company
      */
-    public function getCompany()
+    public function getCompany(): ?Company
     {
         return $this->company;
     }
@@ -184,7 +180,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setCompany(Company $company)
+    public function setCompany(?Company $company): Despatch
     {
         $this->company = $company;
 
@@ -194,7 +190,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Client
      */
-    public function getDestinatario()
+    public function getDestinatario(): ?Client
     {
         return $this->destinatario;
     }
@@ -204,7 +200,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setDestinatario($destinatario)
+    public function setDestinatario(?Client $destinatario): Despatch
     {
         $this->destinatario = $destinatario;
 
@@ -214,7 +210,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Client
      */
-    public function getTercero()
+    public function getTercero(): ?Client
     {
         return $this->tercero;
     }
@@ -224,7 +220,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setTercero($tercero)
+    public function setTercero(?Client $tercero): Despatch
     {
         $this->tercero = $tercero;
 
@@ -234,7 +230,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Shipment
      */
-    public function getEnvio()
+    public function getEnvio(): ?Shipment
     {
         return $this->envio;
     }
@@ -244,7 +240,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setEnvio(Shipment $envio)
+    public function setEnvio(?Shipment $envio): Despatch
     {
         $this->envio = $envio;
 
@@ -254,7 +250,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Document
      */
-    public function getDocBaja()
+    public function getDocBaja(): ?Document
     {
         return $this->docBaja;
     }
@@ -264,7 +260,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setDocBaja($docBaja)
+    public function setDocBaja(?Document $docBaja): Despatch
     {
         $this->docBaja = $docBaja;
 
@@ -274,7 +270,7 @@ class Despatch implements DocumentInterface
     /**
      * @return Document
      */
-    public function getRelDoc()
+    public function getRelDoc(): ?Document
     {
         return $this->relDoc;
     }
@@ -284,7 +280,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setRelDoc($relDoc)
+    public function setRelDoc(?Document $relDoc): Despatch
     {
         $this->relDoc = $relDoc;
 
@@ -294,7 +290,7 @@ class Despatch implements DocumentInterface
     /**
      * @return DespatchDetail[]
      */
-    public function getDetails()
+    public function getDetails(): ?array
     {
         return $this->details;
     }
@@ -304,7 +300,7 @@ class Despatch implements DocumentInterface
      *
      * @return Despatch
      */
-    public function setDetails($details)
+    public function setDetails(?array $details): Despatch
     {
         $this->details = $details;
 
@@ -316,7 +312,7 @@ class Despatch implements DocumentInterface
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         $parts = [
             $this->company->getRuc(),

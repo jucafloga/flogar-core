@@ -1,10 +1,9 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Administrador
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Retention;
+
+use DateTimeInterface;
 
 /**
  * Class Exchange.
@@ -35,14 +34,14 @@ class Exchange
     /**
      * Fecha de cambio.
      *
-     * @var \DateTime
+     * @var DateTimeInterface
      */
     private $fecha;
 
     /**
      * @return string
      */
-    public function getMonedaRef()
+    public function getMonedaRef(): ?string
     {
         return $this->monedaRef;
     }
@@ -52,7 +51,7 @@ class Exchange
      *
      * @return Exchange
      */
-    public function setMonedaRef($monedaRef)
+    public function setMonedaRef(?string $monedaRef): Exchange
     {
         $this->monedaRef = $monedaRef;
 
@@ -62,7 +61,7 @@ class Exchange
     /**
      * @return string
      */
-    public function getMonedaObj()
+    public function getMonedaObj(): ?string
     {
         return $this->monedaObj;
     }
@@ -72,7 +71,7 @@ class Exchange
      *
      * @return Exchange
      */
-    public function setMonedaObj($monedaObj)
+    public function setMonedaObj(?string $monedaObj): Exchange
     {
         $this->monedaObj = $monedaObj;
 
@@ -82,7 +81,7 @@ class Exchange
     /**
      * @return float
      */
-    public function getFactor()
+    public function getFactor(): ?float
     {
         return $this->factor;
     }
@@ -92,7 +91,7 @@ class Exchange
      *
      * @return Exchange
      */
-    public function setFactor($factor)
+    public function setFactor(?float $factor): Exchange
     {
         $this->factor = $factor;
 
@@ -100,19 +99,19 @@ class Exchange
     }
 
     /**
-     * @return \DateTime
+     * @return DateTimeInterface
      */
-    public function getFecha()
+    public function getFecha(): ?DateTimeInterface
     {
         return $this->fecha;
     }
 
     /**
-     * @param \DateTime $fecha
+     * @param DateTimeInterface $fecha
      *
      * @return Exchange
      */
-    public function setFecha($fecha)
+    public function setFecha(?DateTimeInterface $fecha): Exchange
     {
         $this->fecha = $fecha;
 

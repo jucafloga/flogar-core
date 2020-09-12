@@ -1,7 +1,9 @@
 <?php
+declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
+use DateTimeInterface;
 use Flogar\Model\Client\Client;
 use Flogar\Model\Company\Address;
 
@@ -20,14 +22,9 @@ class Invoice extends BaseSale
     private $tipoOperacion;
 
     /**
-     * @var \DateTime
+     * @var DateTimeInterface
      */
     private $fecVencimiento;
-
-    /**
-     * @var float
-     */
-    private $mtoOperGratuitas;
 
     /**
      * @var float
@@ -38,6 +35,11 @@ class Invoice extends BaseSale
      * @var float
      */
     private $mtoDescuentos;
+
+    /**
+     * @var float
+     */
+    private $sumOtrosDescuentos;
 
     /**
      * @var Charge[]
@@ -109,7 +111,7 @@ class Invoice extends BaseSale
     /**
      * @return string
      */
-    public function getTipoOperacion()
+    public function getTipoOperacion(): ?string
     {
         return $this->tipoOperacion;
     }
@@ -119,7 +121,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setTipoOperacion($tipoOperacion)
+    public function setTipoOperacion(?string $tipoOperacion): Invoice
     {
         $this->tipoOperacion = $tipoOperacion;
 
@@ -127,19 +129,19 @@ class Invoice extends BaseSale
     }
 
     /**
-     * @return \DateTime
+     * @return DateTimeInterface
      */
-    public function getFecVencimiento()
+    public function getFecVencimiento(): ?DateTimeInterface
     {
         return $this->fecVencimiento;
     }
 
     /**
-     * @param \DateTime $fecVencimiento
+     * @param DateTimeInterface $fecVencimiento
      *
      * @return Invoice
      */
-    public function setFecVencimiento($fecVencimiento)
+    public function setFecVencimiento(?DateTimeInterface $fecVencimiento): Invoice
     {
         $this->fecVencimiento = $fecVencimiento;
 
@@ -149,7 +151,7 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getSumDsctoGlobal()
+    public function getSumDsctoGlobal(): ?float
     {
         return $this->sumDsctoGlobal;
     }
@@ -157,11 +159,9 @@ class Invoice extends BaseSale
     /**
      * @param float $sumDsctoGlobal
      *
-     * @deprecated UBL 2.1
-     *
      * @return Invoice
      */
-    public function setSumDsctoGlobal($sumDsctoGlobal)
+    public function setSumDsctoGlobal(?float $sumDsctoGlobal): Invoice
     {
         $this->sumDsctoGlobal = $sumDsctoGlobal;
 
@@ -171,7 +171,7 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getMtoDescuentos()
+    public function getMtoDescuentos(): ?float
     {
         return $this->mtoDescuentos;
     }
@@ -181,7 +181,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setMtoDescuentos($mtoDescuentos)
+    public function setMtoDescuentos(?float $mtoDescuentos): Invoice
     {
         $this->mtoDescuentos = $mtoDescuentos;
 
@@ -191,139 +191,19 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getMtoOperGratuitas()
+    public function getSumOtrosDescuentos(): ?float
     {
-        return $this->mtoOperGratuitas;
+        return $this->sumOtrosDescuentos;
     }
 
     /**
-     * @param float $mtoOperGratuitas
+     * @param float $sumOtrosDescuentos
      *
      * @return Invoice
      */
-    public function setMtoOperGratuitas($mtoOperGratuitas)
+    public function setSumOtrosDescuentos(?float $sumOtrosDescuentos): Invoice
     {
-        $this->mtoOperGratuitas = $mtoOperGratuitas;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTotalAnticipos()
-    {
-        return $this->totalAnticipos;
-    }
-
-    /**
-     * @param mixed $totalAnticipos
-     *
-     * @return Invoice
-     */
-    public function setTotalAnticipos($totalAnticipos)
-    {
-        $this->totalAnticipos = $totalAnticipos;
-
-        return $this;
-    }
-
-    /**
-     * @return SalePerception
-     */
-    public function getPerception()
-    {
-        return $this->perception;
-    }
-
-    /**
-     * @param SalePerception $perception
-     *
-     * @return Invoice
-     */
-    public function setPerception($perception)
-    {
-        $this->perception = $perception;
-
-        return $this;
-    }
-
-    /**
-     * @return EmbededDespatch
-     */
-    public function getGuiaEmbebida()
-    {
-        return $this->guiaEmbebida;
-    }
-
-    /**
-     * @param EmbededDespatch $guiaEmbebida
-     *
-     * @return Invoice
-     */
-    public function setGuiaEmbebida($guiaEmbebida)
-    {
-        $this->guiaEmbebida = $guiaEmbebida;
-
-        return $this;
-    }
-
-    /**
-     * @return Prepayment[]
-     */
-    public function getAnticipos()
-    {
-        return $this->anticipos;
-    }
-
-    /**
-     * @param Prepayment[] $anticipos
-     *
-     * @return Invoice
-     */
-    public function setAnticipos($anticipos)
-    {
-        $this->anticipos = $anticipos;
-
-        return $this;
-    }
-
-    /**
-     * @return Detraction
-     */
-    public function getDetraccion()
-    {
-        return $this->detraccion;
-    }
-
-    /**
-     * @param Detraction $detraccion
-     *
-     * @return Invoice
-     */
-    public function setDetraccion($detraccion)
-    {
-        $this->detraccion = $detraccion;
-
-        return $this;
-    }
-
-    /**
-     * @return Client
-     */
-    public function getSeller()
-    {
-        return $this->seller;
-    }
-
-    /**
-     * @param Client $seller
-     *
-     * @return Invoice
-     */
-    public function setSeller($seller)
-    {
-        $this->seller = $seller;
+        $this->sumOtrosDescuentos = $sumOtrosDescuentos;
 
         return $this;
     }
@@ -331,7 +211,7 @@ class Invoice extends BaseSale
     /**
      * @return Charge[]
      */
-    public function getDescuentos()
+    public function getDescuentos(): ?array
     {
         return $this->descuentos;
     }
@@ -341,7 +221,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setDescuentos($descuentos)
+    public function setDescuentos(?array $descuentos): Invoice
     {
         $this->descuentos = $descuentos;
 
@@ -351,7 +231,7 @@ class Invoice extends BaseSale
     /**
      * @return Charge[]
      */
-    public function getCargos()
+    public function getCargos(): ?array
     {
         return $this->cargos;
     }
@@ -361,7 +241,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setCargos($cargos)
+    public function setCargos(?array $cargos): Invoice
     {
         $this->cargos = $cargos;
 
@@ -371,7 +251,7 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getMtoCargos()
+    public function getMtoCargos(): ?float
     {
         return $this->mtoCargos;
     }
@@ -381,7 +261,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setMtoCargos($mtoCargos)
+    public function setMtoCargos(?float $mtoCargos): Invoice
     {
         $this->mtoCargos = $mtoCargos;
 
@@ -391,7 +271,127 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getValorVenta()
+    public function getTotalAnticipos(): ?float
+    {
+        return $this->totalAnticipos;
+    }
+
+    /**
+     * @param float $totalAnticipos
+     *
+     * @return Invoice
+     */
+    public function setTotalAnticipos(?float $totalAnticipos): Invoice
+    {
+        $this->totalAnticipos = $totalAnticipos;
+
+        return $this;
+    }
+
+    /**
+     * @return SalePerception
+     */
+    public function getPerception(): ?SalePerception
+    {
+        return $this->perception;
+    }
+
+    /**
+     * @param SalePerception $perception
+     *
+     * @return Invoice
+     */
+    public function setPerception(?SalePerception $perception): Invoice
+    {
+        $this->perception = $perception;
+
+        return $this;
+    }
+
+    /**
+     * @return EmbededDespatch
+     */
+    public function getGuiaEmbebida(): ?EmbededDespatch
+    {
+        return $this->guiaEmbebida;
+    }
+
+    /**
+     * @param EmbededDespatch $guiaEmbebida
+     *
+     * @return Invoice
+     */
+    public function setGuiaEmbebida(?EmbededDespatch $guiaEmbebida): Invoice
+    {
+        $this->guiaEmbebida = $guiaEmbebida;
+
+        return $this;
+    }
+
+    /**
+     * @return Prepayment[]
+     */
+    public function getAnticipos(): ?array
+    {
+        return $this->anticipos;
+    }
+
+    /**
+     * @param Prepayment[] $anticipos
+     *
+     * @return Invoice
+     */
+    public function setAnticipos(?array $anticipos): Invoice
+    {
+        $this->anticipos = $anticipos;
+
+        return $this;
+    }
+
+    /**
+     * @return Detraction
+     */
+    public function getDetraccion(): ?Detraction
+    {
+        return $this->detraccion;
+    }
+
+    /**
+     * @param Detraction $detraccion
+     *
+     * @return Invoice
+     */
+    public function setDetraccion(?Detraction $detraccion): Invoice
+    {
+        $this->detraccion = $detraccion;
+
+        return $this;
+    }
+
+    /**
+     * @return Client
+     */
+    public function getSeller(): ?Client
+    {
+        return $this->seller;
+    }
+
+    /**
+     * @param Client $seller
+     *
+     * @return Invoice
+     */
+    public function setSeller(?Client $seller): Invoice
+    {
+        $this->seller = $seller;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValorVenta(): ?float
     {
         return $this->valorVenta;
     }
@@ -401,7 +401,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setValorVenta($valorVenta)
+    public function setValorVenta(?float $valorVenta): Invoice
     {
         $this->valorVenta = $valorVenta;
 
@@ -411,7 +411,7 @@ class Invoice extends BaseSale
     /**
      * @return float
      */
-    public function getSubTotal()
+    public function getSubTotal(): ?float
     {
         return $this->subTotal;
     }
@@ -421,7 +421,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setSubTotal($subTotal)
+    public function setSubTotal(?float $subTotal): Invoice
     {
         $this->subTotal = $subTotal;
 
@@ -431,7 +431,7 @@ class Invoice extends BaseSale
     /**
      * @return string
      */
-    public function getObservacion()
+    public function getObservacion(): ?string
     {
         return $this->observacion;
     }
@@ -441,7 +441,7 @@ class Invoice extends BaseSale
      *
      * @return Invoice
      */
-    public function setObservacion($observacion)
+    public function setObservacion(?string $observacion): Invoice
     {
         $this->observacion = $observacion;
 
@@ -451,19 +451,17 @@ class Invoice extends BaseSale
     /**
      * @return Address
      */
-    public function getDireccionEntrega()
+    public function getDireccionEntrega(): ?Address
     {
         return $this->direccionEntrega;
     }
 
     /**
-     * Direccion Entrega utilizada en ventas itinerantes.
-     *
      * @param Address $direccionEntrega
      *
      * @return Invoice
      */
-    public function setDireccionEntrega($direccionEntrega)
+    public function setDireccionEntrega(?Address $direccionEntrega): Invoice
     {
         $this->direccionEntrega = $direccionEntrega;
 

@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by NetBeansIDE.
- * User: Jucafloga
- */
+declare(strict_types=1);
 
 namespace Flogar\Model\Response;
 
@@ -19,7 +16,7 @@ class SummaryResult extends BaseResult
     /**
      * @return string
      */
-    public function getTicket()
+    public function getTicket(): ?string
     {
         return $this->ticket;
     }
@@ -27,9 +24,9 @@ class SummaryResult extends BaseResult
     /**
      * @param string $ticket
      *
-     * @return SummaryResult
+     * @return $this
      */
-    public function setTicket($ticket)
+    public function setTicket(?string $ticket): self
     {
         $this->ticket = $ticket;
 
