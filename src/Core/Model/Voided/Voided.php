@@ -6,12 +6,15 @@ namespace Flogar\Model\Voided;
 use DateTimeInterface;
 use Flogar\Model\Company\Company;
 use Flogar\Model\DocumentInterface;
+use Flogar\Model\TimezonePeTrait;
 
 /**
  * Class Voided.
  */
 class Voided implements DocumentInterface
 {
+    use TimezonePeTrait;
+
     /**
      * @var string
      */
@@ -148,10 +151,11 @@ class Voided implements DocumentInterface
      */
     public function getXmlId(): string
     {
+        $fecComunicacionPe = $this->getDateWithTimezone($this->fecComunicacion);
         $parts = [
             'RA',
-            $this->getFecComunicacion()->format('Ymd'),
-            $this->getCorrelativo(),
+            $fecComunicacionPe->format('Ymd'),
+            $this->correlativo,
         ];
 
         return join('-', $parts);

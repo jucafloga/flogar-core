@@ -6,12 +6,15 @@ namespace Flogar\Model\Summary;
 use DateTimeInterface;
 use Flogar\Model\Company\Company;
 use Flogar\Model\DocumentInterface;
+use Flogar\Model\TimezonePeTrait;
 
 /**
  * Class Summary.
  */
 class Summary implements DocumentInterface
 {
+    use TimezonePeTrait;
+
     /**
      * @var string
      */
@@ -173,10 +176,11 @@ class Summary implements DocumentInterface
      */
     public function getXmlId(): string
     {
+        $fecResumenPe = $this->getDateWithTimezone($this->fecResumen);
         $parts = [
             'RC',
-            $this->getFecResumen()->format('Ymd'),
-            $this->getCorrelativo(),
+            $fecResumenPe->format('Ymd'),
+            $this->correlativo,
         ];
 
         return join('-', $parts);

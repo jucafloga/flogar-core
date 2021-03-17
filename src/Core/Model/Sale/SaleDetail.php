@@ -125,7 +125,7 @@ class SaleDetail
     /**
      * @var float
      */
-    private $factorIcbper = 0.10;
+    private $factorIcbper = 0.30;
     /**
      * @var float
      */

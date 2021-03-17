@@ -9,49 +9,49 @@ namespace Flogar\Model\Company;
 class Address
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $ubigueo;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $codigoPais = 'PE';
 
     /**
-     * @var string
+     * @var string|null
      */
     private $departamento;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $provincia;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $distrito;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $urbanizacion;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $direccion;
 
     /**
      * Codigo Local Anexo.
      *
-     * @var string
+     * @var string|null
      */
     private $codLocal = '0000';
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getUbigueo(): ?string
     {
@@ -59,7 +59,7 @@ class Address
     }
 
     /**
-     * @param string $ubigueo
+     * @param string|null $ubigueo
      *
      * @return Address
      */
@@ -71,7 +71,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getCodigoPais(): ?string
     {
@@ -79,7 +79,7 @@ class Address
     }
 
     /**
-     * @param string $codigoPais
+     * @param string|null $codigoPais
      *
      * @return Address
      */
@@ -91,7 +91,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getDepartamento(): ?string
     {
@@ -99,7 +99,7 @@ class Address
     }
 
     /**
-     * @param string $departamento
+     * @param string|null $departamento
      *
      * @return Address
      */
@@ -111,7 +111,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getProvincia(): ?string
     {
@@ -119,7 +119,7 @@ class Address
     }
 
     /**
-     * @param string $provincia
+     * @param string|null $provincia
      *
      * @return Address
      */
@@ -131,7 +131,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getDistrito(): ?string
     {
@@ -139,7 +139,7 @@ class Address
     }
 
     /**
-     * @param string $distrito
+     * @param string|null $distrito
      *
      * @return Address
      */
@@ -151,7 +151,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getUrbanizacion(): ?string
     {
@@ -159,7 +159,7 @@ class Address
     }
 
     /**
-     * @param string $urbanizacion
+     * @param string|null $urbanizacion
      *
      * @return Address
      */
@@ -171,7 +171,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getDireccion(): ?string
     {
@@ -179,7 +179,7 @@ class Address
     }
 
     /**
-     * @param string $direccion
+     * @param string|null $direccion
      *
      * @return Address
      */
@@ -191,7 +191,7 @@ class Address
     }
 
     /**
-     * @return string
+     * @return string|null
      */
     public function getCodLocal(): ?string
     {
@@ -199,7 +199,7 @@ class Address
     }
 
     /**
-     * @param string $codLocal
+     * @param string|null $codLocal
      *
      * @return Address
      */
