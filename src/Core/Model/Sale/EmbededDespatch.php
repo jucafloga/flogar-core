@@ -1,10 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
-use Flogar\Model\Client\Client;
-use Flogar\Model\Despatch\Direction;
+use Greenter\Model\Client\Client;
+use Greenter\Model\Despatch\Direction;
 
 /**
  * Class EmbededDespatch.

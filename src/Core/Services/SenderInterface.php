@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Administrador
+ * Date: 02/10/2017
+ * Time: 09:58 AM.
+ */
+
 declare(strict_types=1);
 
 namespace Flogar\Services;

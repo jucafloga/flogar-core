@@ -29,6 +29,11 @@ class CdrResponse
     protected $notes;
 
     /**
+     * @var string|null
+     */
+    protected $reference;
+
+    /**
      * @return string
      */
     public function getId(): ?string
@@ -104,6 +109,24 @@ class CdrResponse
     public function setNotes(?array $notes): CdrResponse
     {
         $this->notes = $notes;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getReference(): ?string
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param string|null $reference
+     */
+    public function setReference(?string $reference): CdrResponse
+    {
+        $this->reference = $reference;
 
         return $this;
     }

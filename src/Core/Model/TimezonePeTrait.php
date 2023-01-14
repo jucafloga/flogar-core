@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Flogar\Model;
 
 use DateTime;
-use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 
@@ -19,6 +18,6 @@ trait TimezonePeTrait
             return $date->setTimezone($timezone);
         }
 
-        return $date instanceof DateTimeImmutable ? $date->setTimezone($timezone) : $date;
+        return $date->setTimezone($timezone);
     }
 }

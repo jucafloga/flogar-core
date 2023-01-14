@@ -32,6 +32,11 @@ class DespatchDetail
     private $codProdSunat;
 
     /**
+     * @var DetailAttribute[]
+     */
+    private $atributos;
+
+    /**
      * @return string
      */
     public function getCodigo(): ?string
@@ -128,6 +133,24 @@ class DespatchDetail
     {
         $this->codProdSunat = $codProdSunat;
 
+        return $this;
+    }
+
+    /**
+     * @return DetailAttribute[]
+     */
+    public function getAtributos(): ?array
+    {
+        return $this->atributos;
+    }
+
+    /**
+     * @param DetailAttribute[] $atributos
+     * @return DespatchDetail
+     */
+    public function setAtributos(?array $atributos): DespatchDetail
+    {
+        $this->atributos = $atributos;
         return $this;
     }
 }

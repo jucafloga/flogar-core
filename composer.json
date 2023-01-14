@@ -6,17 +6,22 @@
     "authors": [
         {
             "name": "jucafloga",
-            "email": "jucafloga@gmail.com"
+            "email": "jucafloga@outlook.com"
         }
     ],
     "homepage": "https://github.com/jucafloga/flogar-core",
     "type": "library",
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "autoload": {
         "psr-4": {
             "Flogar\\": "src/Core/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.0-dev"
         }
     }
 }
