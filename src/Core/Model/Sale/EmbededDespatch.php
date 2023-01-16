@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Flogar\Model\Sale;
 
-use Greenter\Model\Client\Client;
-use Greenter\Model\Despatch\Direction;
+use Flogar\Model\Client\Client;
+use Flogar\Model\Despatch\Direction;
 
 /**
  * Class EmbededDespatch.

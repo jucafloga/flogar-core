@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Greenter\Services\Api;
+namespace Flogar\Services\Api;
 
 use DateTimeInterface;
 
